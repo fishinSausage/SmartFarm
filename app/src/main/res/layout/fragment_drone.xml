@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- 제목 -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="드론 위치정보"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvSubTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="실시간 드론 위치 및 상태"
+        android:textSize="14sp"
+        android:paddingBottom="16dp" />
+
+
+    <!-- 드론 A 카드 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardDroneA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="3dp"
+        app:cardCornerRadius="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- 상단 헤더 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/imgDroneA"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/ic_drone"
+                    android:textColor="#A855F7" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:paddingStart="10dp">
+
+                    <TextView
+                        android:id="@+id/tvDroneAName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="드론 A"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvDroneAId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="drone-1"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvDroneAStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="활성"
+                    android:textSize="12sp"
+                    android:padding="6dp"
+                    android:background="#E7FAEB" />
+
+            </LinearLayout>
+
+            <!-- 배터리 -->
+            <TextView
+                android:id="@+id/tvBattery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="배터리                                        85%"
+                android:paddingTop="12dp" />
+
+            <ProgressBar
+                android:id="@+id/barBattery"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:progress="85"
+                android:progressTint="#22C55E"
+                android:backgroundTint="#DDDDDD" />
+
+            <TextView
+                android:id="@+id/tvLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="위치  37.5670, 126.9785"
+                android:paddingTop="12dp" />
+
+            <TextView
+                android:id="@+id/tvAltitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="고도  50m"
+                android:paddingTop="4dp" />
+
+            <TextView
+                android:id="@+id/tvSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="속도                                        15 m/s"
+                android:paddingTop="4dp" />
+
+            <ProgressBar
+                android:id="@+id/pbSpeed"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:progress="75"
+                android:progressTint="#4D8CFF"
+                android:backgroundTint="#DDDDDD" />
+
+
+
+            <TextView
+                android:id="@+id/tvUpdated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="마지막 업데이트 2025. 11. 30. 오후 9:01:58"
+                android:textSize="12sp"
+                android:paddingTop="12dp"/>
+
+            <Button
+                android:id="@+id/btnSendDroneCommand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="드론 명령 보내기" />
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- 드론    B 카드 -->
+    <androidx.cardview.widget.CardView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="3dp"
+        app:cardCornerRadius="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- 상단 헤더 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/ic_drone"
+                    android:textColor="#A855F7" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:paddingStart="10dp">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="드론 B"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="drone-2"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="충전 중"
+                    android:textSize="12sp"
+                    android:padding="6dp"
+                    android:background="#b2b2b2" />
+
+            </LinearLayout>
+
+            <!-- 배터리 -->
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="배터리                                        0%"
+                android:paddingTop="12dp" />
+
+            <ProgressBar
+
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:progress="0"
+                android:progressTint="#FFD93B"
+                android:backgroundTint="#DDDDDD" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="위치  0, 0"
+                android:paddingTop="12dp" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="고도  0m"
+                android:paddingTop="4dp" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="속도                                          0 m/s"
+                android:paddingTop="4dp" />
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:progress="0"
+                android:progressTint="#4d4d4d"
+                android:backgroundTint="#DDDDDD" />
+
+
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="마지막 업데이트\n 2025. 11. 30. 오후 9:01:58"
+                android:textSize="12sp"
+                android:paddingTop="12dp"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</LinearLayout>

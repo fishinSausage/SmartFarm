@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:paddingBottom="20dp"
+
+        >
+
+        <!-- 평균 온도/습도/토양 수분 -->
+        <TextView
+            android:text="대시보드"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="스마트 농장 시스템 개요"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#FFFFFF"
+                android:padding="16dp"
+                android:elevation="3dp">
+
+            <TextView
+                android:id="@+id/tv_avg_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="평균 온도\n25.8°C" />
+
+            <TextView
+                android:id="@+id/tv_avg_humidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="           평균 습도\n           62.9%" />
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:padding="16dp"
+            android:elevation="3dp">
+
+
+            <TextView
+                android:id="@+id/tv_CO2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CO2 level" />
+
+            <TextView
+                android:id="@+id/tv_active_drone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="           활성 드론\n           1/2" />
+        </LinearLayout>
+
+        <!-- 밭 카드들 -->
+        <!-- 첫 번째 줄: 1번, 2번 밭 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="밭 상태"
+            android:textSize="20sp"
+            android:paddingTop="16dp"
+            android:paddingBottom="6dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:layout_marginBottom="10dp"
+            android:elevation="3dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="16dp"
+                android:elevation="3dp"
+                android:weightSum="4"
+                android:layout_weight="1"
+                android:layout_marginEnd="1dp"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🌱1번 밭 (벼)🟢"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="면적: 5000㎡" />
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="마지막 관수:\n11/29/2025" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="16dp"
+                android:elevation="3dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="1dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🌱2번 밭   (딸기)🟡"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="면적: 3000㎡" />
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="마지막 관수: 11/15/2025" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+        <!-- 두 번째 줄: 3번, 4번 밭 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="16dp"
+                android:elevation="3dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="1dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🌱3번 밭   (상추)🟢"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="면적: 2500㎡" />
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="마지막 관수: 10/27/2025" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="16dp"
+                android:elevation="3dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="1dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🌱4번 밭   (배추)🔴"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="면적: 4000㎡" />
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="마지막 관수: 10/17/2025" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+        <!-- 드론 상태 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="드론 상태"
+            android:textSize="20sp"
+            android:paddingTop="16dp"
+            android:paddingBottom="6dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:padding="16dp"
+            android:elevation="3dp">
+
+            <TextView
+                android:id="@+id/tv_drone_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🚁드론 A (활성)" />
+
+            <TextView
+                android:id="@+id/tv_drone_z"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="고도: 50m" />
+
+            <TextView
+                android:id="@+id/tv_drone_spd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="속도: 15m/s" />
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:id="@+id/pb_drone_battery"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:progress="85"
+                android:progressTint="#22C55E"
+                android:backgroundTint="#DDDDDD" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="드론 B (충전 중)" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="고도: 0m" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="속도: 0m/s" />
+
+            <ProgressBar
+               style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:progress="0"
+                android:progressTint="#FFD93B"
+                android:backgroundTint="#DDDDDD"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
