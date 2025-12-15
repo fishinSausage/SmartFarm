@@ -1,13 +1,19 @@
 import socket
 import json
+import last as vision_module
+from datetime import datetime
+import threading
 import time
 
-SERVER_IP = "127.0.0.1"
+SERVER_IP = "192.168.68.103"
 SERVER_PORT = 5002
 
 def safe_json_parse(data: str):
     try:
-        return json.loads(data)
+        parsed = json.loads(data)
+        print("recved: ")
+        print(json.dumps(parsed, indent=2))
+        return parsed.get("event")
     except json.JSONDecodeError:
         return None
 
@@ -32,28 +38,35 @@ def main():
             line, buffer = buffer.split("\n", 1)
 
             req = safe_json_parse(line)
-            if req is None:
-                print("Fail to parse Data:", line)
-                continue
+            if req == "inspect":
+                control_thread = threading.Thread(target=vision_module.main, daemon=True)
+                control_thread.start() 
+                while(control_thread.is_alive()):
+                    time.sleep(10)
+                    print("inside loop")
+                    # Get GPS coordinates from the shared vision_module
+                    gps_pos = vision_module.get_current_gps()
+                    
+                    if gps_pos is None:
+                        gps_pos = (0, 0, 0)
 
-            print("Request from Server:", req)
 
-            response = {
-                "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
-                "event": "drone",
-                "deviceName": "drone_NO1",
-                "data": {
-                    "locationX": 1,
-                    "locationY" : 1,
-                    "batteryRemain" : 50.0,
-                    "speedX" : 1,
-                    "speedY" : 1,
-                    "speedZ" : 1
-                }
-            }
+                    response = {
+                        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                        "event": "coordinate",
+                        "device_name": "drone",
+                        "data": {
+                            "latitude": gps_pos[0],
+                            "longitude": gps_pos[1],
+                            "altitude": gps_pos[2],
+                        }
+                    }
+                    print(json.dumps(response, indent=2))
+                    client.send((json.dumps(response) + "\n").encode())
 
-            client.send((json.dumps(response) + "\n").encode())
-            print("📤 드론 → 서버 응답 전송:", response)
+                control_thread.join(timeout=2.0)
+                # if not drone_unfinished:
+                #     #TODO send finshed repsonse jsson
 
 
 if __name__ == "__main__":
